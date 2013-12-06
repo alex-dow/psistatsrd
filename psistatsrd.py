@@ -2,8 +2,9 @@
 import pygame
 import traceback
 import sys
-import numpy as np
-from pygame.locals import *
+from pygame.locals import USEREVENT
+from pygame.locals import FULLSCREEN
+from pygame.locals import DOUBLEBUF
 import random
 import math
 from psistatsrd.graph import Graph
