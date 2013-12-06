@@ -5,9 +5,6 @@ import sys
 from pygame.locals import USEREVENT
 from pygame.locals import FULLSCREEN
 from pygame.locals import DOUBLEBUF
-import random
-import math
-from psistatsrd.graph import Graph
 from psistatsrd.graph2 import Graph2
 from psistatsrd import args
 from psistatsrd.config import Config
@@ -56,12 +53,12 @@ FPS           = int(c.params['fps'])
 TIMER         = int(float(1000) * (float(1) / float(FPS)))
 
 logging.debug("Timers:")
-logging.debug("Draw Timer: %d" % DRAW_INTERVAL)
-logging.debug("Poll Timer: %d" % POLL_INTERVAL)
-logging.debug("Bind Timer: %d" % BIND_INTERVAL)
-logging.debug("FPS       : %d" % FPS)
+logging.debug("Draw Timer: %d", DRAW_INTERVAL)
+logging.debug("Poll Timer: %d", POLL_INTERVAL)
+logging.debug("Bind Timer: %d", BIND_INTERVAL)
+logging.debug("FPS       : %d", FPS)
 
-logging.debug("Timer     : %f" % TIMER)
+logging.debug("Timer     : %f", TIMER)
 
 pygame.time.set_timer(USEREVENT+1, POLL_INTERVAL)
 # pygame.time.set_timer(USEREVENT+2, DRAW_INTERVAL)
@@ -96,7 +93,7 @@ class Screen(object):
                 if len(colors) < 3:
                     raise TypeError()
             except:
-                logging.error("ERROR - Background color for screen %s invalid format" % self.id)
+                logging.error("ERROR - Background color for screen %s invalid format", self.id)
         else:
             return (0,0,0)
 
@@ -285,7 +282,7 @@ while RUN:
             try:
                 subscriber.bind_queues(c.params)
             except requests.exceptions.ConnectionError as e:
-                logging.critical("Could not bind queues because I could not connect to RabbitMQ API: %s" % e.message)
+                logging.critical("Could not bind queues because I could not connect to RabbitMQ API: %s", e.message)
                 error_count = error_count + 1
                 
         elif event.type == pygame.QUIT:
