@@ -39,12 +39,3 @@ The messages should be utf-8 encoded json with the following structure:
     "uptime": "12d:12h:32m:12s" // Uptime
 }
 ```
-
-
-
-
-
-
-
-
---
