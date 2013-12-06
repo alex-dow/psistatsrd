@@ -1,0 +1,26 @@
+PsistatsRD v0.0.1 Installation
+==============================
+
+Python dependencies:
+--------------------
+Check the file requirements.txt for a list of python
+dependencies.
+
+Pygame has several library dependencies. For more information
+on installing pygame visit:
+
+http://www.pygame.org/install.html
+
+It will probably be easier to use your OS's package manager to
+install pygame, then create a virtualenv with that included.
+
+Installation with pip:
+----------------------
+pip install -r requirements.txt
+
+Installation:
+1. Install necessary python dependencies
+2. Configure PsistatsRD
+3. Run PsistatsRD
+
+Simple ;)
