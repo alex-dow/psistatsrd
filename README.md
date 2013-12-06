@@ -1,5 +1,5 @@
-Psistats Rearview Display (PsistatsRD) v0.0.1
-=============================================
+PsistatsRD
+==========
 
 Version 0.0.1
 -------------
