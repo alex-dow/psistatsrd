@@ -1,5 +1,6 @@
 import pygame
 import pygame.event
+from pygame.locals import DOUBLEBUF, FULLSCREEN
 import sys
 
 class StopLoop(Exception):
@@ -110,7 +111,6 @@ class App(object):
                 height = 0
                 for k, qr in queue_rows.queue_rows.iteritems():
                     if (POLL_DRAW == True):
-                        print "------ DRAW EVENT OVER HERE YO ---------"
                         qr.draw(App.POLL_EVENT)
                     qr.draw(App.DRAW_EVENT)
                     screen.blit(qr.surface, (0, height))
