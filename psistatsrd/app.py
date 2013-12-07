@@ -127,5 +127,5 @@ class App(object):
                 status.error()
         self._logger.warn("Leaving application")
 
-import worker
+import psistatsrd.worker as worker
 
