@@ -1,7 +1,7 @@
 PsistatsRD
 ==========
 
-0.0.12
+0.0.13
 -------------
 
 An application to display graphs and other information from Psistats
