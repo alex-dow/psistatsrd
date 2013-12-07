@@ -1,6 +1,4 @@
 import pygame
-import numpy as np
-import random
 import math
 
 class Graph2(object):
@@ -8,7 +6,7 @@ class Graph2(object):
     SCROLL_TOP = 1
     SCROLL_BOTTOM = 2
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, **kwargs):
         self.bgcolor      = kwargs["bgcolor"] if "bgcolor" in kwargs else (30,30,30)
         self.color        = kwargs["color"] if "color" in kwargs else (255,255,255)
         self.line_width   = kwargs['line_width'] if 'line_width' in kwargs else 1
