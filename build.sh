@@ -10,4 +10,5 @@ PYTHONPATH=$WORKSPACE:$PYTHONPATH
 pylint -f parseable $WORKSPACE/ | tee pylint.out
 /usr/bin/sloccount --duplicates --wide --details $WORKSPACE > sloccount.sc
 
+cd $WORKSPACE
 /psikon/sonar-runner/bin/sonar-runner
