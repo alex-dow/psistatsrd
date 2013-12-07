@@ -25,7 +25,7 @@ from pygame.locals import FULLSCREEN, DOUBLEBUF
 from psistatsrd.app import App
 import psistatsrd.args
 import psistatsrd.config
-
+from psistatsrd.utils import rabbitmq
 
 
 config_file = psistatsrd.args.args['config_file']
@@ -47,7 +47,9 @@ if config['display.doublebuf'] == True:
     PYGAME_FLAGS = PYGAME_FLAGS | DOUBLEBUF
 
 
-logging.info("Starting application")
+logging.info("Bind queues")
+# rabbitmq.bind_queues(config)
+logging.info("App.run()")
 app = App(config=config, logger=logging)
 app.run()
 

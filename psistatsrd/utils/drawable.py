@@ -18,6 +18,7 @@ def create_queue_row(data, config):
 
     scroller = create_scroller(scroll_text, config)
     row = create_row(config)
+    row.host = data['hostname']
 
     row.add_drawable('scroller', scroller, App.DRAW_EVENT)
     row.add_drawable('cpu', cpu_graph, App.POLL_EVENT)

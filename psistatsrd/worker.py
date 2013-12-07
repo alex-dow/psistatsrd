@@ -83,6 +83,8 @@ class WorkerThread(threading.Thread):
                                 
                                 qr.get_drawable('mem').process(float(data['mem_used']) / float(data['mem_total']))
                                 qr.update_title("%s - %s" % (data['hostname'], data['uptime']))
+
+                                self._queue_rows.add_processed(queue_name)
                             
                         channel.cancel()
                     pygame.time.wait(1000)
@@ -90,5 +92,11 @@ class WorkerThread(threading.Thread):
                     self._logger.error('Error trying to fetch messages')
                     self._logger.exception(sys.exc_info()[1])
                     self._status.error()
+                finally:
+                    self._logger.debug("Error count: %s" % self._status.error_count)
+                    if self._status.isError():
+                        connection = None
+                        channel = None
+                    pygame.time.wait(1000)
         self._logger.warning("Worker thread exiting!")
 

@@ -1,3 +1,3 @@
 #!/bin/bash
-DISPLAY=:0 python psistatsrd.py 
+DISPLAY=:0 python prd.py 
 
