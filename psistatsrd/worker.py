@@ -80,7 +80,8 @@ class WorkerThread(threading.Thread):
                             if self._queue_rows.has_queue_row(queue_name):
                                 qr = self._queue_rows.get_queue_row(queue_name)
                                 qr.get_drawable('cpu').process(float(data['cpu']) / float(100))
-                                qr.get_drawable('mem').process(float(data['mem_used']) / float(data['mem_total']))
+                                
+                                qr.get_drawable('mem').process(float(data['mem_free']) / float(data['mem_total']))
                                 qr.update_title("%s - %s" % (data['hostname'], data['uptime']))
                             
                         channel.cancel()

@@ -26,7 +26,7 @@ class Graph2(object):
         self.numbers = [0]
 
         self.surface = pygame.Surface((self.width, self.height))
-
+        self.surface.fill(self.bgcolor)
 
     def process(self, number):
         self.numbers.append(number)
@@ -37,10 +37,17 @@ class Graph2(object):
         if len(self.numbers) == 0:
             return
 
-        self.surface.fill(self.bgcolor)
+        max_width = len(self.numbers)
+        min_width = self.surface.get_width() - max_width
 
-        for idx, h in enumerate(self.numbers):
+        self.surface.scroll(-max_width, 0)
+        self.surface.fill(self.bgcolor, rect=(min_width, 0, self.surface.get_width(), self.surface.get_height()))
 
+        x = min_width
+        counter = 0
+        while x < self.surface.get_width():
+            h = self.numbers[counter]
+    
             if (self.max_color != None and self.min_color != None):
                 line_color = pygame.Color("black")
                 if (self.max_color.r > self.min_color.r):
@@ -63,8 +70,12 @@ class Graph2(object):
                 
 
             pygame.draw.line(self.surface, line_color, 
-                (idx, self.surface.get_height()), 
-                (idx, (self.surface.get_height() - (h * self.surface.get_height())))
+                (x, self.surface.get_height()), 
+                (x, (self.surface.get_height() - (h * self.surface.get_height())))
             )
+
+            x = x + 1
+            counter = counter + 1
+        self.numbers = []
         
 
