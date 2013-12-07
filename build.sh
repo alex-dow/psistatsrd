@@ -7,3 +7,5 @@ pip install pylint
 
 pylint -f parseable $WORKSPACE/ | tee pylint.out
 /usr/bin/sloccount --duplicates --wide --details $WORKSPACE > sloccount.sc
+
+/psikon/sonar-runner/bin/sonar-runner
